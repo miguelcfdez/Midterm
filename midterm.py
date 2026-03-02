@@ -121,3 +121,25 @@ c = a + b
 print(c)
 d = "abc" * (c // 3)
 print(d)
+
+## Ex 9
+
+def days_since_birthday(birthday):
+    """
+    birthday format: DD-MM-YYYY
+    returns number of days from full years only
+    """
+    parts = birthday.split("-")
+    birth_year = int(parts[2])
+    current_year = 2026
+    total_days = 0
+    for year in range(birth_year + 1, current_year):
+        if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+            total_days += 366
+        else:
+            total_days += 365
+    return total_days
+
+print(days_since_birthday("16-02-2006"))
+
+
